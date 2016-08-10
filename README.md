@@ -1,2 +1,2 @@
-# bitbucket-pipelines-dotnet
-Bitbucket Pipelines Docker Image with .Net Core and Mono
+# GitLabs .NET
+GitLabs Docker Image with .Net Core and Mono
