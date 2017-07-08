@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Enable SSL
 RUN apt-get update \
-    && apt-get install -y apt-transport-https curl
+    && apt-get install -y apt-transport-https curl tzdata
 
 # Install .NET Core
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list' \
