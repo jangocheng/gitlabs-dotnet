@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Enable SSL
 RUN apt-get update \
-    && apt-get install -y apt-transport-https curl tzdata
+    && apt-get install -y apt-transport-https curl tzdata git
 
 # Install .NET Core
 RUN sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list' \
@@ -20,6 +20,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 # Install NuGet
 RUN mkdir -p /opt/nuget \
     && curl -Lsfo /opt/nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+ENV PATH "$PATH:/opt/nuget"
 
 # Prime dotnet
 RUN mkdir dotnettest \
